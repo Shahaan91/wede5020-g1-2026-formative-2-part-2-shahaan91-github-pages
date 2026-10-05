@@ -5,6 +5,10 @@
 **Module:** WEDE5020 — Web Development (Introduction)  
 **Part:** Part 2 — Designing the Visuals: CSS Styling and Responsive Design
 
+**Looking to run the site? Here's the repo I set up for that to use with GitHub Pages since this repo is locked and won't let me do that.:** 
+https://github.com/Shahaan91/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages
+https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/
+
 ## Project overview
 
 Meliora Media is a Malvern/Durban-based video production and advertising business. The website gives the business a central branded presence beyond social media and makes its services, credentials and contact/enquiry routes easy to understand.
