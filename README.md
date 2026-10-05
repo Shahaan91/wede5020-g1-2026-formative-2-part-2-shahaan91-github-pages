@@ -31,58 +31,20 @@ Meliora Media is a Malvern/Durban-based video production and advertising busines
 | `enquiry.html` | Structured project enquiry form with service and timeline fields. |
 | `contact.html` | Location, email, WhatsApp, Instagram and link to the detailed enquiry form. |
 
-## Expanded sitemap
-
-```text
-Home (index.html)
-├── About Us
-│   ├── Our Story
-│   └── Credentials / Team approach
-├── Services
-│   ├── Professional Video Shoots
-│   ├── Editing & Colour Grading
-│   ├── Voice-Over Production
-│   ├── Advertisement Creation
-│   └── Recent Work Gallery
-├── Enquiry
-│   ├── Contact details
-│   ├── Service selection
-│   ├── Timeline selection
-│   └── Project brief
-└── Contact
-    ├── Location
-    ├── Email
-    ├── WhatsApp
-    └── Instagram
-```
 
 ## Part 2 CSS implementation
 
 ### External stylesheet and cascade
 
-All five HTML pages link to the same stylesheet: `css/style.css`. Shared brand rules are defined once and reused throughout the website. More specific component rules and breakpoint rules then build on those base styles so the cascade is used rather than duplicating inline styles.
+All five HTML pages share one style sheet now: `css/style.css`. Shared brand rules are defined once and reused throughout the website. More specific component rules and breakpoint rules then build on those base styles so the cascade is used rather than duplicating inline styles.
 
 ### Base style / CSS reset
 
 The stylesheet begins with a small reset (`box-sizing`, margin resets, responsive media defaults and inherited form typography), followed by reusable CSS custom properties for colour, typography, spacing and shadows.
 
-### Colour palette
-
-| Role | Colour |
-|---|---|
-| Primary background | `#09090D` |
-| Surface | `#14131A` |
-| Elevated surface | `#1D1926` |
-| Brand purple | `#7C3AED` |
-| Light purple accent | `#B69CFF` |
-| Main text | `#F7F5FB` |
-| Muted text | `#C9C5D2` |
 
 The palette is based on the purple/white Meliora Media logo and uses light text against dark surfaces for clear contrast. WCAG guidance states that normal text should generally reach at least a 4.5:1 contrast ratio against its background.
 
-### Typography
-
-The proposal specified Magneto for display text and Angsana New for body text. The CSS keeps those names first in the font stacks while providing common fallbacks so the site remains readable when those fonts are not installed. Headings use stronger weight, italics and tighter line-height; body copy uses a larger line-height for readability.
 
 ### Layout structure
 
@@ -107,15 +69,6 @@ Media queries are a core responsive-design technique because they apply CSS cond
 
 The home hero uses `<picture>`, `srcset` and `sizes`. The Services gallery uses responsive `srcset` candidates at 480px, 800px and the original 1179px width so the browser can choose a suitable source for the current display size. MDN documents `srcset` and `sizes` specifically for this purpose.
 
-## Part 1 feedback corrections
-
-The lecturer awarded **77/100** for Part 1. The main improvement points were richer feature descriptions, an actual colour palette, stronger technical/budget references, a more detailed sitemap, tidier folders, navigation inside the header, stronger comments, a detailed README/changelog and more references. These points have been addressed in Part 2 and are recorded in detail in `docs/part1-feedback-corrections.md`.
-
-The original feedback also noted that only one of the two proposals was submitted. Because the original Part 1 document names “Pop cultured” without a complete proposal, a clearly labelled corrective appendix has been added at `docs/alternative-proposal.md`.
-
-## Budget clarification
-
-The original proposal estimated approximately R10,000 for development and R1,000 for a major maintenance update. These remain project estimates rather than fixed market prices. For infrastructure, current xneelo pages list Basic Web Hosting at **R99/month** and `.co.za` registration/renewal at **R110/year** (pricing should always be rechecked before purchase). On that basis, first-year basic hosting plus a `.co.za` domain is approximately **R1,298** before any development or maintenance charge.
 
 ## Browser / responsive testing
 
@@ -157,50 +110,13 @@ The Part 2 website was checked at the following viewport sizes using Chromium de
 - Added a detailed feedback-correction document and second-proposal corrective appendix.
 - Added updated technical, accessibility, responsive-image and hosting references.
 - Added responsive screenshot evidence for desktop, tablet and mobile.
+- Cleaned up comments
+- Changed Font to Lucida Handwriting since Magneto was too hard to read
+- Added link to deployed page/repo for said deployed page
 
-## Suggested Git commit sequence
 
-To satisfy the requirement for multiple descriptive commits, commit the work in logical stages rather than as one large commit. Suggested messages:
 
-1. `fix: correct Part 1 HTML structure and move nav into header`
-2. `feat: add shared external stylesheet and base visual system`
-3. `feat: build responsive grid flexbox and breakpoint layouts`
-4. `feat: add responsive images and interactive pseudo-class states`
-5. `docs: expand README changelog feedback corrections and references`
-6. `test: add desktop tablet and mobile screenshot evidence`
 
-> The repository history cannot be created by a ZIP file alone; these commits need to be made and pushed through Git/GitHub by the student.
-
-## Final file structure
-
-```text
-WEDE5020 POE project files - Shahaan Khan - ST10511080/
-├── README.md
-├── ST10511080 - WEDE5020 POE.pdf
-├── github repo link.txt
-├── docs/
-│   ├── alternative-proposal.md
-│   ├── part1-feedback-corrections.md
-│   └── screenshots/
-│       ├── home-desktop.png
-│       ├── home-tablet.png
-│       └── home-mobile.png
-├── index.html
-├── about.html
-├── services.html
-├── enquiry.html
-├── contact.html
-├── css/
-    │   └── style.css
-└── images/
-    ├── logo.jpg
-    ├── aerial-durban.jpg
-    ├── ferrari-front.jpg
-    ├── ferrari-badge.jpg
-    ├── ferrari-headlight.jpg
-    └── responsive/
-            └── responsive image variants
-```
 
 ## References
 
