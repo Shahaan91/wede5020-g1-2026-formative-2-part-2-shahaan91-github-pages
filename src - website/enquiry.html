@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry | Meliora Media</title>
+    <meta name="description" content="Start a project with Meliora Media by submitting a detailed production enquiry.">
+    <!-- One external stylesheet is shared by every page for consistent cascading styles. -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="enquiry-page">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+    <div class="container header-inner">
+        <!-- Brand identity: logo and text are grouped as one home link. -->
+        <a class="brand" href="index.html" aria-label="Meliora Media home">
+            <img src="images/logo.jpg" alt="Meliora Media crest logo" width="90" height="90">
+            <span class="brand-copy">
+                <strong>Meliora Media</strong>
+                <span>Clarity in every frame</span>
+            </span>
+        </a>
+        <!-- Primary navigation sits inside the header, addressing Part 1 lecturer feedback. -->
+        <nav class="site-nav" aria-label="Primary navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main id="main-content">
+    <section class="page-hero">
+        <div class="container">
+            <p class="eyebrow">Enquiry</p>
+            <h1>Tell us what you want to create</h1>
+            <p class="section-intro">Share the project basics below. This Part 2 form demonstrates complete visual styling; form processing can be connected in a later development phase.</p>
+        </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="form-heading">
+        <div class="container form-layout">
+            <form class="enquiry-form" action="#" method="post" aria-labelledby="form-heading">
+                <h2 class="section-title form-field full" id="form-heading">Project details</h2>
+                <div class="form-field"><label for="name">Full Name *</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+                <div class="form-field"><label for="business">Business Name</label><input type="text" id="business" name="business" autocomplete="organization"></div>
+                <div class="form-field"><label for="email">Email Address *</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+                <div class="form-field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
+                <div class="form-field"><label for="service">Service Required</label><select id="service" name="service"><option value="video-shoot">Video Shoot (including Drone)</option><option value="editing">Editing &amp; Colour Grading</option><option value="voice-over">Voice-Over Production</option><option value="full-package">Full Advertisement Package</option></select></div>
+                <div class="form-field"><label for="timeline">Preferred Timeline</label><select id="timeline" name="timeline"><option value="asap">As soon as possible</option><option value="2-weeks">Within 2 weeks</option><option value="1-month">Within 1 month</option><option value="flexible">Flexible / not sure yet</option></select></div>
+                <div class="form-field full"><label for="message">Tell Us About Your Project *</label><textarea id="message" name="message" required placeholder="What are you promoting, where will the content be used, and what result do you want from it?"></textarea></div>
+                <div class="form-field full"><button type="submit">Submit Enquiry</button></div>
+            </form>
+
+            <aside class="contact-list" aria-label="Before you enquire">
+                <div class="contact-item"><strong>Helpful detail</strong><p>Include the product or service, shoot location, intended platform and preferred deadline.</p></div>
+                <div class="contact-item"><strong>Response</strong><p>For direct contact, use the details on the <a href="contact.html">Contact page</a>.</p></div>
+                <div class="contact-item"><strong>Services</strong><p>Not sure what you need? Review the <a href="services.html">Services page</a> first.</p></div>
+            </aside>
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <p>&copy; 2026 Meliora Media. All rights reserved.</p>
+            <p>Based in Malvern, Durban, KwaZulu-Natal, South Africa.</p>
+        </div>
+        <ul class="footer-links" aria-label="Social links">
+            <li><a href="https://www.instagram.com/official_meliora_media/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
