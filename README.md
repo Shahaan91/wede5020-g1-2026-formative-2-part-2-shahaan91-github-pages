@@ -56,7 +56,7 @@ Home (index.html)
 
 ### External stylesheet and cascade
 
-All five HTML pages link to the same stylesheet: `src - website/css/style.css`. Shared brand rules are defined once and reused throughout the website. More specific component rules and breakpoint rules then build on those base styles so the cascade is used rather than duplicating inline styles.
+All five HTML pages link to the same stylesheet: `css/style.css`. Shared brand rules are defined once and reused throughout the website. More specific component rules and breakpoint rules then build on those base styles so the cascade is used rather than duplicating inline styles.
 
 ### Base style / CSS reset
 
@@ -181,21 +181,20 @@ WEDE5020 POE project files - Shahaan Khan - ST10511080/
 │       ├── home-desktop.png
 │       ├── home-tablet.png
 │       └── home-mobile.png
-└── src - website/
-    ├── index.html
-    ├── about.html
-    ├── services.html
-    ├── enquiry.html
-    ├── contact.html
-    ├── css/
+├── index.html
+├── about.html
+├── services.html
+├── enquiry.html
+├── contact.html
+├── css/
     │   └── style.css
-    └── images/
-        ├── logo.jpg
-        ├── aerial-durban.jpg
-        ├── ferrari-front.jpg
-        ├── ferrari-badge.jpg
-        ├── ferrari-headlight.jpg
-        └── responsive/
+└── images/
+    ├── logo.jpg
+    ├── aerial-durban.jpg
+    ├── ferrari-front.jpg
+    ├── ferrari-badge.jpg
+    ├── ferrari-headlight.jpg
+    └── responsive/
             └── responsive image variants
 ```
 
@@ -218,3 +217,7 @@ W3C Web Accessibility Initiative, 2026. *Understanding Success Criterion 1.4.3: 
 xneelo, 2026. *Domain Name Search and Registration*. Available at: <https://xneelo.co.za/domains/> [Accessed 5 October 2026].
 
 xneelo, 2026. *Web Hosting*. Available at: <https://xneelo.co.za/web-hosting/> [Accessed 5 October 2026].
+
+## GitHub Pages deployment
+
+The site entry point (`index.html`) is stored at the repository root so GitHub Pages can publish the website directly from the `main` branch root. The `.nojekyll` file ensures the project is served as a plain static HTML/CSS site.
