@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/sitemap.xml

@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meliora Media | Video Production & Advertising | Malvern</title>
     <meta name="description" content="Meliora Media is a Malvern-based video production studio offering filming, editing, colour grading and voice-over advertising for retail businesses.">
-    <!-- One external stylesheet is shared by every page for consistent cascading styles. -->
+    <meta name="keywords" content="Meliora Media, Malvern video production, Durban video production, video advertising, editing, colour grading, voice-over">
+    <meta name="author" content="Shahaan Khan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Meliora Media | Video Production & Advertising | Malvern">
+    <meta property="og:description" content="Meliora Media is a Malvern-based video production studio offering filming, editing, colour grading and voice-over advertising for retail businesses.">
+    <meta property="og:url" content="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/">
+    <meta property="og:image" content="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/images/aerial-durban.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Well here's the single CSS sheet. -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body class="home-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
     <div class="container header-inner">
-        <!-- Brand identity: logo and text are grouped as one home link. -->
+        <!-- Logo and name are grouped together and treated as a single clickable home link -->
         <a class="brand" href="index.html" aria-label="Meliora Media home">
             <img src="images/logo.jpg" alt="Meliora Media crest logo" width="90" height="90">
             <span class="brand-copy">
@@ -20,14 +31,15 @@
                 <span>Clarity in every frame</span>
             </span>
         </a>
-        <!-- Primary navigation sits inside the header, addressing Part 1 lecturer feedback. -->
+        <!-- Navbar added to the header -->
         <nav class="site-nav" aria-label="Primary navigation">
             <ul>
                 <li><a href="index.html" aria-current="page">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -39,7 +51,7 @@
             <source srcset="images/responsive/aerial-durban-320w.jpg 320w, images/aerial-durban.jpg 640w" sizes="100vw">
             <img src="images/aerial-durban.jpg" alt="Aerial photograph of a Durban retail strip captured by Meliora Media" width="640" height="480" fetchpriority="high">
         </picture>
-        <div class="container hero-content">
+        <div class="container hero-content js-reveal">
             <p class="eyebrow">Video production · Advertising · Durban</p>
             <h1 id="home-heading">Bringing your brand to life through video</h1>
             <p>Meliora Media creates cinematic video, editing, colour grading and voice-over advertising for retail businesses that want to stand out online.</p>
@@ -51,7 +63,7 @@
     </section>
 
     <section class="content-section" aria-labelledby="services-preview-heading">
-        <div class="container">
+        <div class="container js-reveal">
             <p class="eyebrow">What we do</p>
             <h2 class="section-title" id="services-preview-heading">Built for brands that need attention</h2>
             <p class="section-intro">From the first camera setup to the final export, the process stays focused on one goal: content that looks professional and communicates clearly.</p>
@@ -64,8 +76,34 @@
         </div>
     </section>
 
+    <section class="content-section portfolio-preview" aria-labelledby="portfolio-preview-heading">
+        <div class="container js-reveal">
+            <p class="eyebrow">Selected work</p>
+            <h2 class="section-title" id="portfolio-preview-heading">Advertisements, social video and photography</h2>
+            <p class="section-intro">A few examples from Meliora Media's advertising and social portfolio are shown below. The full portfolio includes the supplied campaign artwork, short-form video and event photography.</p>
+            <div class="portfolio-teasers">
+                <a class="portfolio-teaser" href="portfolio.html#advertisements">
+                    <picture>
+                        <source srcset="images/responsive/craving-co-fathers-day-advert-480w.jpg 480w, images/responsive/craving-co-fathers-day-advert-900w.jpg 900w" sizes="(max-width: 42rem) 92vw, 30vw">
+                        <img src="images/craving-co-fathers-day-advert.jpg" alt="Craving-Co Father's Day promotional advertisement" width="1638" height="2048" loading="lazy">
+                    </picture>
+                    <span>Advertising artwork</span>
+                </a>
+                <a class="portfolio-teaser" href="portfolio.html#video-work">
+                    <img src="images/restaurant-gyoza-reel-poster.jpg" alt="Frame from a restaurant social media video showing gyoza being cooked" width="720" height="1280" loading="lazy">
+                    <span>Social video</span>
+                </a>
+                <a class="portfolio-teaser" href="portfolio.html#photography">
+                    <img src="images/ferrari-front.jpg" alt="Front view of a red Ferrari 812 GTS photographed at an event" width="1179" height="1572" loading="lazy">
+                    <span>Photography</span>
+                </a>
+            </div>
+            <div class="button-row"><a class="button" href="portfolio.html">View the portfolio</a></div>
+        </div>
+    </section>
+
     <section class="content-section" aria-labelledby="why-heading">
-        <div class="container section-grid">
+        <div class="container section-grid js-reveal">
             <div>
                 <p class="eyebrow">Why Meliora</p>
                 <h2 class="section-title" id="why-heading">Visual craft with marketing intent</h2>
@@ -83,11 +121,25 @@
             <p>&copy; 2026 Meliora Media. All rights reserved.</p>
             <p>Based in Malvern, Durban, KwaZulu-Natal, South Africa.</p>
         </div>
-        <ul class="footer-links" aria-label="Social links">
+        <ul class="footer-links" aria-label="Social and utility links">
             <li><a href="https://www.instagram.com/official_meliora_media/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
         </ul>
     </div>
 </footer>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Meliora Media",
+  "url": "https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/",
+  "image": "https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/images/logo.jpg",
+  "description": "Video production, editing, colour grading, voice-over and advertising services based in Malvern, Durban.",
+  "areaServed": ["Malvern", "Durban", "KwaZulu-Natal"],
+  "sameAs": ["https://www.instagram.com/official_meliora_media/"]
+}</script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

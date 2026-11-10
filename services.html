@@ -5,14 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Meliora Media</title>
     <meta name="description" content="Explore Meliora Media's video shoots, drone footage, editing, colour grading, voice-over and advertisement creation services.">
-    <!-- Here's the CSS sheet again. -->
+    <meta name="keywords" content="video shoots Durban, drone footage Durban, video editing, colour grading, voice-over, advertisement creation">
+    <meta name="author" content="Shahaan Khan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/services.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Services | Meliora Media">
+    <meta property="og:description" content="Explore Meliora Media's video shoots, drone footage, editing, colour grading, voice-over and advertisement creation services.">
+    <meta property="og:url" content="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/services.html">
+    <meta property="og:image" content="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/images/ferrari-front.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- One external stylesheet is shared by every page for consistent cascading styles. -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body class="services-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
     <div class="container header-inner">
-        <!-- Grouped logo and title link back to home page -->
+        <!-- Brand identity: logo and text are grouped as one home link. -->
         <a class="brand" href="index.html" aria-label="Meliora Media home">
             <img src="images/logo.jpg" alt="Meliora Media crest logo" width="90" height="90">
             <span class="brand-copy">
@@ -20,53 +31,80 @@
                 <span>Clarity in every frame</span>
             </span>
         </a>
-        <!-- Navbar in header per request -->
+        <!-- Primary navigation sits inside the header, addressing Part 1 lecturer feedback. -->
         <nav class="site-nav" aria-label="Primary navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html" aria-current="page">Services</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html" aria-current="page">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <main id="main-content">
     <section class="page-hero">
-        <div class="container">
+        <div class="container js-reveal">
             <p class="eyebrow">Services</p>
             <h1>From capture to final cut</h1>
             <p class="section-intro">Flexible production services for retail, food, automotive and other brands that need polished visual advertising.</p>
         </div>
     </section>
 
-    <section class="content-section" aria-labelledby="service-list-heading">
-        <div class="container">
+    <section class="content-section" aria-labelledby="service-list-heading" id="service-search">
+        <div class="container js-reveal">
             <p class="eyebrow">Production services</p>
             <h2 class="section-title" id="service-list-heading">One team, four core capabilities</h2>
-            <div class="service-grid">
-                <article class="service-card"><span class="service-number">01 / Capture</span><h3>Professional Video Shoots</h3><p>On-location filming with professional camera equipment and drone footage where the location and regulations allow it, creating stable and cinematic content beyond typical smartphone video.</p></article>
-                <article class="service-card"><span class="service-number">02 / Post</span><h3>Editing &amp; Colour Grading</h3><p>Raw footage is shaped through careful cutting, pacing, colour correction and grading to match the client's preferred style and advertising platform.</p></article>
-                <article class="service-card"><span class="service-number">03 / Audio</span><h3>Voice-Over Production</h3><p>Professional narration and subtitle-ready editing help businesses communicate offers, product features and calls to action clearly and persuasively.</p></article>
-                <article class="service-card"><span class="service-number">04 / Campaign</span><h3>Advertisement Creation</h3><p>Concept, footage, editing, grading and voice-over are combined into a complete advertisement prepared for social media or other digital channels.</p></article>
+            <!-- Search box for filtering the service cards -->
+            <div class="search-panel">
+                <label for="service-search-input">Search the services</label>
+                <input type="search" id="service-search-input" placeholder="Try video, drone, editing, audio or advertising" autocomplete="off">
+                <p id="service-result-count" class="search-result-count" aria-live="polite">4 services found</p>
             </div>
+            <div class="service-grid" id="dynamic-service-list">
+                <article class="service-card" data-search="video filming camera drone capture location retail automotive"><span class="service-number">01 / Capture</span><h3>Professional Video Shoots</h3><p>On-location filming with professional camera equipment and drone footage where the location and regulations allow it, creating stable and cinematic content beyond typical smartphone video.</p></article>
+                <article class="service-card" data-search="edit editing post production colour color grading correction pacing"><span class="service-number">02 / Post</span><h3>Editing &amp; Colour Grading</h3><p>Raw footage is shaped through careful cutting, pacing, colour correction and grading to match the client's preferred style and advertising platform.</p></article>
+                <article class="service-card" data-search="voice voice-over audio narration subtitles sound"><span class="service-number">03 / Audio</span><h3>Voice-Over Production</h3><p>Professional narration and subtitle-ready editing help businesses communicate offers, product features and calls to action clearly and persuasively.</p></article>
+                <article class="service-card" data-search="advert advertisement advertising campaign full package social media concept"><span class="service-number">04 / Campaign</span><h3>Advertisement Creation</h3><p>Concept, footage, editing, grading and voice-over are combined into a complete advertisement prepared for social media or other digital channels.</p></article>
+            </div>
+            <p id="service-empty" class="empty-search" hidden>No matching service found. Try a broader search term.</p>
             <div class="button-row"><a class="button" href="enquiry.html">Request a quote</a></div>
         </div>
     </section>
 
     <section class="content-section" aria-labelledby="work-heading">
-        <div class="container">
+        <div class="container js-reveal">
             <p class="eyebrow">Recent work</p>
             <h2 class="section-title" id="work-heading">Detail, colour and atmosphere</h2>
             <p class="section-intro">Promotional automotive photography captured around the GAS Motorshow demonstrates the same attention to detail applied to client productions.</p>
             <div class="gallery">
-                <figure><img src="images/ferrari-front.jpg" srcset="images/responsive/ferrari-front-480w.jpg 480w, images/responsive/ferrari-front-800w.jpg 800w, images/ferrari-front.jpg 1179w" sizes="(max-width: 42rem) 92vw, (max-width: 62rem) 46vw, 31vw" alt="Front view of a red Ferrari 812 GTS" width="1179" height="1572" loading="lazy"></figure>
-                <figure><img src="images/ferrari-badge.jpg" srcset="images/responsive/ferrari-badge-480w.jpg 480w, images/responsive/ferrari-badge-800w.jpg 800w, images/ferrari-badge.jpg 1179w" sizes="(max-width: 42rem) 92vw, (max-width: 62rem) 46vw, 31vw" alt="Close-up of the Ferrari prancing horse badge" width="1179" height="1572" loading="lazy"></figure>
-                <figure><img src="images/ferrari-headlight.jpg" srcset="images/responsive/ferrari-headlight-480w.jpg 480w, images/responsive/ferrari-headlight-800w.jpg 800w, images/ferrari-headlight.jpg 1179w" sizes="(max-width: 42rem) 92vw, (max-width: 62rem) 46vw, 31vw" alt="Ferrari headlight reflecting coloured event lighting" width="1179" height="1572" loading="lazy"></figure>
+                <figure><button class="gallery-button" type="button" data-lightbox-src="images/ferrari-front.jpg" data-lightbox-alt="Front view of a red Ferrari 812 GTS" data-lightbox-caption="Ferrari 812 GTS photographed around the GAS Motorshow."><img src="images/ferrari-front.jpg" srcset="images/responsive/ferrari-front-480w.jpg 480w, images/responsive/ferrari-front-800w.jpg 800w, images/ferrari-front.jpg 1179w" sizes="(max-width: 42rem) 92vw, (max-width: 62rem) 46vw, 31vw" alt="Front view of a red Ferrari 812 GTS" width="1179" height="1572" loading="lazy"></button></figure>
+                <figure><button class="gallery-button" type="button" data-lightbox-src="images/ferrari-badge.jpg" data-lightbox-alt="Close-up of the Ferrari prancing horse badge" data-lightbox-caption="Close-up detail from the automotive photography set."><img src="images/ferrari-badge.jpg" srcset="images/responsive/ferrari-badge-480w.jpg 480w, images/responsive/ferrari-badge-800w.jpg 800w, images/ferrari-badge.jpg 1179w" sizes="(max-width: 42rem) 92vw, (max-width: 62rem) 46vw, 31vw" alt="Close-up of the Ferrari prancing horse badge" width="1179" height="1572" loading="lazy"></button></figure>
+                <figure><button class="gallery-button" type="button" data-lightbox-src="images/ferrari-headlight.jpg" data-lightbox-alt="Ferrari headlight reflecting coloured event lighting" data-lightbox-caption="Lighting and detail captured at the event."><img src="images/ferrari-headlight.jpg" srcset="images/responsive/ferrari-headlight-480w.jpg 480w, images/responsive/ferrari-headlight-800w.jpg 800w, images/ferrari-headlight.jpg 1179w" sizes="(max-width: 42rem) 92vw, (max-width: 62rem) 46vw, 31vw" alt="Ferrari headlight reflecting coloured event lighting" width="1179" height="1572" loading="lazy"></button></figure>
+            </div>
+            <div class="button-row"><a class="button secondary" href="portfolio.html">View advertisements and video work</a></div>
+        </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="faq-heading">
+        <div class="container js-reveal">
+            <p class="eyebrow">Common questions</p>
+            <h2 class="section-title" id="faq-heading">Before a shoot begins</h2>
+            <div class="accordion">
+                <div class="accordion-item"><button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-one">What should a client provide before filming?<span>+</span></button><div class="accordion-panel" id="faq-one" hidden><p>A useful brief includes the business or product being promoted, the location, the intended platform, the preferred deadline and any must-have shots or messages.</p></div></div>
+                <div class="accordion-item"><button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-two">Can one project include filming and editing?<span>+</span></button><div class="accordion-panel" id="faq-two" hidden><p>Yes. The full advertisement service combines planning, filming, editing, colour grading and voice-over where needed.</p></div></div>
+                <div class="accordion-item"><button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="faq-three">Where can the finished content be used?<span>+</span></button><div class="accordion-panel" id="faq-three" hidden><p>Deliverables can be prepared for social media and other digital channels, depending on the brief and the format required.</p></div></div>
             </div>
         </div>
     </section>
+
+    <dialog class="lightbox" id="gallery-lightbox" aria-labelledby="lightbox-caption">
+        <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+        <img id="lightbox-image" src="images/ferrari-front.jpg" alt="">
+        <p id="lightbox-caption"></p>
+    </dialog>
 </main>
 <footer class="site-footer">
     <div class="container footer-inner">
@@ -74,12 +112,16 @@
             <p>&copy; 2026 Meliora Media. All rights reserved.</p>
             <p>Based in Malvern, Durban, KwaZulu-Natal, South Africa.</p>
         </div>
-        <ul class="footer-links" aria-label="Social links">
-            <!-- This is a real link by the way -->
+        <ul class="footer-links" aria-label="Social and utility links">
             <li><a href="https://www.instagram.com/official_meliora_media/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
         </ul>
     </div>
 </footer>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/services.js"></script>
 </body>
 </html>

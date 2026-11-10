@@ -8,6 +8,7 @@
 **Looking to run the site? Here's the repo I set up for that to use with GitHub Pages since this repo is locked and won't let me do that.:** 
 https://github.com/Shahaan91/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages
 https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/
+https://github.com/EMKNDW/wede5020-g1-2026-summative-1-portfolio-of-evidence-shahaan91
 
 ## Project overview
 

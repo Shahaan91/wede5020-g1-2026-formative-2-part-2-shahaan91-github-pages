@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Meliora Media</title>
-    <meta name="description" content="Contact Meliora Media in Malvern, Durban, KwaZulu-Natal by email, WhatsApp or Instagram.">
-    <!-- Here's the CSS sheet again. -->
+    <meta name="description" content="Contact Meliora Media in Malvern, Durban, KwaZulu-Natal by email, Instagram or the validated website contact form.">
+    <meta name="keywords" content="contact Meliora Media, video production Malvern, Durban video company contact, video advertising Durban">
+    <meta name="author" content="Shahaan Khan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/contact.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact | Meliora Media">
+    <meta property="og:description" content="Contact Meliora Media in Malvern, Durban, KwaZulu-Natal by email, Instagram or the validated website contact form.">
+    <meta property="og:url" content="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/contact.html">
+    <meta property="og:image" content="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/images/aerial-durban.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- One external stylesheet is shared by every page for consistent cascading styles. -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body class="contact-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
     <div class="container header-inner">
-        <!-- Grouped logo and title link back to home page -->
+        <!-- Brand identity: logo and text are grouped as one home link. -->
         <a class="brand" href="index.html" aria-label="Meliora Media home">
             <img src="images/logo.jpg" alt="Meliora Media crest logo" width="90" height="90">
             <span class="brand-copy">
@@ -20,21 +31,22 @@
                 <span>Clarity in every frame</span>
             </span>
         </a>
-        <!-- Navbar in header per request -->
+        <!-- Primary navigation sits inside the header, addressing Part 1 lecturer feedback. -->
         <nav class="site-nav" aria-label="Primary navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
-                <li><a href="contact.html" aria-current="page">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <main id="main-content">
     <section class="page-hero">
-        <div class="container">
+        <div class="container js-reveal">
             <p class="eyebrow">Contact</p>
             <h1>Let's make something worth watching</h1>
             <p class="section-intro">Reach Meliora Media directly or use the enquiry page for a more detailed project brief.</p>
@@ -42,7 +54,7 @@
     </section>
 
     <section class="content-section" aria-labelledby="contact-heading">
-        <div class="container section-grid">
+        <div class="container section-grid js-reveal">
             <div>
                 <p class="eyebrow">Get in touch</p>
                 <h2 class="section-title" id="contact-heading">Malvern-based, working with local brands</h2>
@@ -57,6 +69,44 @@
             </address>
         </div>
     </section>
+
+    <section class="content-section visual-section" aria-labelledby="contact-visual-heading">
+        <div class="container section-grid js-reveal">
+            <figure class="media-frame portfolio-figure"><img src="images/restaurant-gyoza-reel-poster.jpg" alt="Frame from a restaurant social media video in the Meliora Media portfolio" width="720" height="1280" loading="lazy"><figcaption>A frame from a short-form restaurant promotion in the portfolio.</figcaption></figure>
+            <div><p class="eyebrow">Social work</p><h2 class="section-title" id="contact-visual-heading">See more before getting in touch</h2><p class="section-intro">The portfolio page includes advertising artwork, social video and photography examples. More public work is linked through the official Instagram profile.</p><div class="button-row"><a class="button secondary" href="portfolio.html">View portfolio</a></div></div>
+        </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="message-heading">
+        <div class="container form-layout js-reveal">
+            <form class="enquiry-form" id="contact-form" action="https://formsubmit.co/info@melioramedia.co.za" method="post" novalidate aria-labelledby="message-heading">
+                <h2 class="section-title form-field full" id="message-heading">Send a general message</h2>
+                <input type="hidden" name="_subject" value="New Meliora Media website contact">
+                <input type="hidden" name="_template" value="table">
+                <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input type="text" id="website" name="_honey" tabindex="-1" autocomplete="off"></div>
+                <div class="form-field"><label for="contact-name">Full Name *</label><input type="text" id="contact-name" name="name" autocomplete="name" minlength="2" maxlength="60" required><small class="field-error" id="contact-name-error"></small></div>
+                <div class="form-field"><label for="contact-email">Email Address *</label><input type="email" id="contact-email" name="email" autocomplete="email" maxlength="120" required><small class="field-error" id="contact-email-error"></small></div>
+                <div class="form-field full"><label for="contact-type">Message Type *</label><select id="contact-type" name="messageType" required><option value="">Choose a message type</option><option value="General question">General question</option><option value="Collaboration">Collaboration</option><option value="Feedback">Feedback</option><option value="Other">Other</option></select><small class="field-error" id="contact-type-error"></small></div>
+                <div class="form-field full"><label for="contact-message">Message *</label><textarea id="contact-message" name="message" minlength="10" maxlength="1000" required placeholder="Type your message here..."></textarea><small class="field-help"><span id="contact-message-count">0</span>/1000 characters · minimum 10</small><small class="field-error" id="contact-message-error"></small></div>
+                <div class="form-field full"><button type="submit">Send Message</button></div>
+                <div class="form-field full"><div id="contact-status" class="form-status" role="status" aria-live="polite"></div></div>
+            </form>
+            <aside class="contact-list">
+                <div class="contact-item"><strong>General messages</strong><p>This form validates the input before jQuery sends it asynchronously to the email endpoint.</p></div>
+                <div class="contact-item"><strong>Project request?</strong><p>Use the <a href="enquiry.html">Enquiry page</a> if you need a service-specific planning response.</p></div>
+            </aside>
+        </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="map-heading">
+        <div class="container js-reveal">
+            <p class="eyebrow">Location</p>
+            <h2 class="section-title" id="map-heading">Interactive Malvern service-area map</h2>
+            <p class="section-intro">The marker identifies the Malvern area rather than a private studio address. Drag, zoom or use the map controls to explore.</p>
+            <div id="map" class="interactive-map" role="region" aria-label="Interactive map showing the Malvern, Durban service area"></div>
+            <p class="map-note">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>.</p>
+        </div>
+    </section>
 </main>
 <footer class="site-footer">
     <div class="container footer-inner">
@@ -64,11 +114,18 @@
             <p>&copy; 2026 Meliora Media. All rights reserved.</p>
             <p>Based in Malvern, Durban, KwaZulu-Natal, South Africa.</p>
         </div>
-        <ul class="footer-links" aria-label="Social links">
+        <ul class="footer-links" aria-label="Social and utility links">
             <li><a href="https://www.instagram.com/official_meliora_media/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
         </ul>
     </div>
 </footer>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/map.js"></script>
 </body>
 </html>

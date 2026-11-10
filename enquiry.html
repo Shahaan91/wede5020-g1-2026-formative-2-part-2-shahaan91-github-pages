@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enquiry | Meliora Media</title>
-    <meta name="description" content="Start a project with Meliora Media by submitting a detailed production enquiry.">
-    <!-- Here's the CSS sheet again. -->
+    <title>Project Enquiry | Meliora Media</title>
+    <meta name="description" content="Start a project with Meliora Media by submitting a detailed, validated production enquiry and receiving an immediate planning response.">
+    <meta name="keywords" content="video production enquiry Durban, advertising quote Durban, video shoot enquiry, editing quote, Meliora Media enquiry">
+    <meta name="author" content="Shahaan Khan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/enquiry.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Project Enquiry | Meliora Media">
+    <meta property="og:description" content="Start a project with Meliora Media by submitting a detailed, validated production enquiry and receiving an immediate planning response.">
+    <meta property="og:url" content="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/enquiry.html">
+    <meta property="og:image" content="https://shahaan91.github.io/wede5020-g1-2026-formative-2-part-2-shahaan91-github-pages/images/craving-co-fathers-day-advert.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- One external stylesheet is shared by every page for consistent cascading styles. -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body class="enquiry-page">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="site-header">
     <div class="container header-inner">
-        <!-- Grouped logo and title link back to home page -->
+        <!-- Brand identity: logo and text are grouped as one home link. -->
         <a class="brand" href="index.html" aria-label="Meliora Media home">
             <img src="images/logo.jpg" alt="Meliora Media crest logo" width="90" height="90">
             <span class="brand-copy">
@@ -20,46 +31,66 @@
                 <span>Clarity in every frame</span>
             </span>
         </a>
-        <!-- Navbar in header per request -->
+        <!-- Primary navigation sits inside the header, addressing Part 1 lecturer feedback. -->
         <nav class="site-nav" aria-label="Primary navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
-                <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </div>
 </header>
 <main id="main-content">
     <section class="page-hero">
-        <div class="container">
+        <div class="container js-reveal">
             <p class="eyebrow">Enquiry</p>
             <h1>Tell us what you want to create</h1>
-            <p class="section-intro">Share the project basics below. This Part 2 form demonstrates complete visual styling; form processing can be connected in a later development phase.</p>
+            <p class="section-intro">Share the project basics below. This Part 3 version keeps the Part 2 form design and adds client-side validation and an immediate planning response after the input is checked.</p>
         </div>
     </section>
 
     <section class="content-section" aria-labelledby="form-heading">
-        <div class="container form-layout">
-            <form class="enquiry-form" action="#" method="post" aria-labelledby="form-heading">
+        <div class="container form-layout js-reveal">
+            <form class="enquiry-form" id="enquiry-form" action="#" method="post" novalidate aria-labelledby="form-heading">
                 <h2 class="section-title form-field full" id="form-heading">Project details</h2>
-                <div class="form-field"><label for="name">Full Name *</label><input type="text" id="name" name="name" autocomplete="name" required></div>
-                <div class="form-field"><label for="business">Business Name</label><input type="text" id="business" name="business" autocomplete="organization"></div>
-                <div class="form-field"><label for="email">Email Address *</label><input type="email" id="email" name="email" autocomplete="email" required></div>
-                <div class="form-field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" autocomplete="tel"></div>
-                <div class="form-field"><label for="service">Service Required</label><select id="service" name="service"><option value="video-shoot">Video Shoot (including Drone)</option><option value="editing">Editing &amp; Colour Grading</option><option value="voice-over">Voice-Over Production</option><option value="full-package">Full Advertisement Package</option></select></div>
-                <div class="form-field"><label for="timeline">Preferred Timeline</label><select id="timeline" name="timeline"><option value="asap">As soon as possible</option><option value="2-weeks">Within 2 weeks</option><option value="1-month">Within 1 month</option><option value="flexible">Flexible / not sure yet</option></select></div>
-                <div class="form-field full"><label for="message">Tell Us About Your Project *</label><textarea id="message" name="message" required placeholder="What are you promoting, where will the content be used, and what result do you want from it?"></textarea></div>
+                <div class="form-field"><label for="name">Full Name *</label><input type="text" id="name" name="name" autocomplete="name" minlength="2" maxlength="60" required><small class="field-error" id="name-error"></small></div>
+                <div class="form-field"><label for="business">Business Name</label><input type="text" id="business" name="business" autocomplete="organization" maxlength="80"><small class="field-error" id="business-error"></small></div>
+                <div class="form-field"><label for="email">Email Address *</label><input type="email" id="email" name="email" autocomplete="email" maxlength="120" required><small class="field-error" id="email-error"></small></div>
+                <div class="form-field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" autocomplete="tel" pattern="[0-9+() -]{7,20}"><small class="field-error" id="phone-error"></small></div>
+                <div class="form-field"><label for="service">Service Required *</label><select id="service" name="service" required><option value="video-shoot">Video Shoot (including Drone)</option><option value="editing">Editing &amp; Colour Grading</option><option value="voice-over">Voice-Over Production</option><option value="full-package">Full Advertisement Package</option></select><small class="field-error" id="service-error"></small></div>
+                <div class="form-field"><label for="timeline">Preferred Timeline *</label><select id="timeline" name="timeline" required><option value="asap">As soon as possible</option><option value="2-weeks">Within 2 weeks</option><option value="1-month">Within 1 month</option><option value="flexible">Flexible / not sure yet</option></select><small class="field-error" id="timeline-error"></small></div>
+                <div class="form-field full"><label for="message">Tell Us About Your Project *</label><textarea id="message" name="message" minlength="20" maxlength="1200" required placeholder="What are you promoting, where will the content be used, and what result do you want from it?"></textarea><small class="field-help"><span id="message-count">0</span>/1200 characters · minimum 20</small><small class="field-error" id="message-error"></small></div>
                 <div class="form-field full"><button type="submit">Submit Enquiry</button></div>
+                <div class="form-field full"><div id="enquiry-status" class="form-status" role="status" aria-live="polite"></div></div>
             </form>
 
             <aside class="contact-list" aria-label="Before you enquire">
                 <div class="contact-item"><strong>Helpful detail</strong><p>Include the product or service, shoot location, intended platform and preferred deadline.</p></div>
                 <div class="contact-item"><strong>Response</strong><p>For direct contact, use the details on the <a href="contact.html">Contact page</a>.</p></div>
                 <div class="contact-item"><strong>Services</strong><p>Not sure what you need? Review the <a href="services.html">Services page</a> first.</p></div>
+                <figure class="enquiry-ad-preview">
+                    <picture><source srcset="images/responsive/craving-co-fathers-day-advert-480w.jpg" media="(max-width: 36rem)"><img src="images/craving-co-fathers-day-advert.jpg" alt="Craving-Co Father's Day advertisement from the Meliora Media portfolio" width="1638" height="2048" loading="lazy"></picture>
+                    <figcaption>An example of the advertising work a project enquiry can lead to.</figcaption>
+                </figure>
             </aside>
+        </div>
+    </section>
+
+    <section class="content-section" id="enquiry-response" hidden aria-labelledby="response-heading">
+        <div class="container js-reveal">
+            <p class="eyebrow">Planning response</p>
+            <h2 class="section-title" id="response-heading">Your enquiry has been processed</h2>
+            <div class="response-grid">
+                <div class="response-card"><strong>Selected service</strong><p id="response-service"></p></div>
+                <div class="response-card"><strong>Indicative estimate</strong><p id="response-cost"></p></div>
+                <div class="response-card"><strong>Availability guidance</strong><p id="response-availability"></p></div>
+            </div>
+            <p id="response-note" class="section-intro"></p>
+            <div class="button-row"><a class="button secondary" href="contact.html">Contact the team</a></div>
         </div>
     </section>
 </main>
@@ -69,11 +100,16 @@
             <p>&copy; 2026 Meliora Media. All rights reserved.</p>
             <p>Based in Malvern, Durban, KwaZulu-Natal, South Africa.</p>
         </div>
-        <ul class="footer-links" aria-label="Social links">
+        <ul class="footer-links" aria-label="Social and utility links">
             <li><a href="https://www.instagram.com/official_meliora_media/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li><a href="sitemap.xml">Sitemap</a></li>
         </ul>
     </div>
 </footer>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
 </body>
 </html>

@@ -56,7 +56,7 @@ textarea {
     --shadow: 0 1.1rem 2.8rem rgba(0, 0, 0, 0.38);
     --radius: 0.75rem;
     --max-width: 74rem;
-    --font-display: "Lucida Handwriting", cursive;
+    --font-display: "Lucida Handwriting", "Segoe Print", cursive;
     --font-body: "Angsana New", "Segoe UI", Arial, sans-serif;
 }
 
@@ -183,10 +183,11 @@ textarea:focus-visible {
     display: block;
     margin-top: 0.25rem;
     color: var(--purple-light);
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: none;
 }
 
 .site-nav ul {
@@ -713,7 +714,7 @@ address {
     }
 
     .brand-copy span {
-        letter-spacing: 0.11em;
+        letter-spacing: 0.04em;
     }
 
     .site-nav ul {
@@ -817,4 +818,607 @@ address {
 /* Small contextual spacing utility kept in the shared stylesheet (no inline CSS). */
 .story-panel {
     margin-top: 1.5rem;
+}
+
+
+/* ---------- 10. Part 3 JavaScript / interactive components ---------- */
+
+/* Content remains visible without JS; animation is enabled only after main.js adds .js-enabled. */
+.js-enabled .js-reveal {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 420ms ease, transform 420ms ease;
+}
+
+.js-enabled .js-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.accordion {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.accordion-item {
+    border: 0.07rem solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow: hidden;
+}
+
+.accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem 1.15rem;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font: inherit;
+    font-weight: 800;
+    text-align: left;
+    cursor: pointer;
+}
+
+.accordion-trigger:hover,
+.accordion-trigger[aria-expanded="true"] {
+    background: rgba(124, 58, 237, 0.12);
+}
+
+.accordion-trigger span {
+    color: var(--purple-light);
+    font-size: 1.35rem;
+}
+
+.accordion-panel {
+    padding: 0 1.15rem 1.15rem;
+    color: var(--muted);
+}
+
+.search-panel {
+    display: grid;
+    gap: 0.45rem;
+    max-width: 42rem;
+    margin-top: 1.5rem;
+}
+
+.search-status,
+.field-help,
+.map-note {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.empty-search {
+    grid-column: 1 / -1;
+    padding: 1.4rem;
+    border: 0.07rem dashed var(--line);
+    border-radius: var(--radius);
+    color: var(--muted);
+}
+
+.gallery-button {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.gallery-button:focus-visible {
+    outline: 0.2rem solid var(--purple-light);
+    outline-offset: -0.3rem;
+}
+
+.lightbox {
+    width: min(92vw, 58rem);
+    max-height: 92vh;
+    padding: 1rem;
+    border: 0.08rem solid var(--line);
+    border-radius: var(--radius);
+    background: #09090d;
+    color: var(--ink);
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.75);
+}
+
+.lightbox::backdrop {
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(0.2rem);
+}
+
+.lightbox img {
+    width: 100%;
+    max-height: 76vh;
+    object-fit: contain;
+    border-radius: 0.45rem;
+}
+
+.lightbox p {
+    margin-top: 0.7rem;
+    color: var(--muted);
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 0.45rem;
+    right: 0.55rem;
+    z-index: 2;
+    width: 2.6rem;
+    height: 2.6rem;
+    border: 0.08rem solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    background: rgba(5,5,7,0.86);
+    color: #fff;
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.field-error {
+    min-height: 1.25rem;
+    color: #ffb4b4;
+    font-size: 0.84rem;
+}
+
+[aria-invalid="true"] {
+    border-color: #ff7a7a;
+    box-shadow: 0 0 0 0.16rem rgba(255, 122, 122, 0.16);
+}
+
+.form-status {
+    min-height: 1.4rem;
+    padding: 0.75rem 0;
+}
+
+.form-status.error {
+    color: #ffb4b4;
+}
+
+.form-status.success {
+    color: #b8f5c5;
+}
+
+.process-response {
+    margin-top: 2rem;
+    padding: clamp(1.4rem, 3vw, 2rem);
+    border: 0.08rem solid var(--purple-light);
+    border-radius: var(--radius);
+    background: linear-gradient(145deg, rgba(124,58,237,0.18), rgba(20,19,26,0.96));
+    box-shadow: var(--shadow);
+}
+
+.response-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.4rem;
+}
+
+.response-grid > div {
+    padding: 1rem;
+    border: 0.06rem solid var(--line);
+    border-radius: 0.45rem;
+    background: rgba(9,9,13,0.55);
+}
+
+.response-grid strong {
+    color: var(--purple-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.interactive-map {
+    width: 100%;
+    min-height: 27rem;
+    margin-top: 1.5rem;
+    border: 0.08rem solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-note {
+    margin-top: 0.7rem;
+}
+
+@media (max-width: 42rem) {
+    .response-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interactive-map {
+        min-height: 22rem;
+    }
+
+    .lightbox {
+        width: 96vw;
+    }
+}
+
+/* Visually hide the anti-spam honeypot without removing it from form submission. */
+.honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+/* Visually hide the anti-spam honeypot without removing it from form submission. */
+.honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+}
+
+
+/* ---------- Part 2 feedback refinements carried into Part 3 ---------- */
+.portfolio-figure {
+    display: grid;
+    align-self: stretch;
+    background: #0d0c11;
+}
+
+.portfolio-figure picture,
+.compact-media picture {
+    display: block;
+    overflow: hidden;
+}
+
+.portfolio-figure img {
+    min-height: 22rem;
+}
+
+.compact-media img {
+    aspect-ratio: 4 / 3;
+}
+
+.portfolio-figure figcaption,
+.compact-media figcaption {
+    padding: 0.8rem 0.95rem 0.95rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.media-frame {
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.media-frame:hover {
+    transform: translateY(-0.18rem);
+    border-color: rgba(182, 156, 255, 0.5);
+    box-shadow: 0 1rem 2.4rem rgba(0, 0, 0, 0.34);
+}
+
+.contact-item a:hover,
+.contact-item a:focus-visible,
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    text-decoration-thickness: 0.12rem;
+    text-underline-offset: 0.2rem;
+}
+
+/* Intermediate-width tuning requested in Part 2 feedback. */
+@media (max-width: 52rem) and (min-width: 42.01rem) {
+    body {
+        font-size: 0.985rem;
+    }
+
+    .page-hero h1 {
+        font-size: clamp(2.15rem, 6vw, 3.25rem);
+    }
+
+    .section-title {
+        font-size: clamp(1.55rem, 4.2vw, 2.25rem);
+    }
+
+    .site-nav a {
+        font-size: 0.76rem;
+        letter-spacing: 0.055em;
+    }
+
+    .card h3 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 42rem) {
+    .portfolio-figure img {
+        min-height: 16rem;
+    }
+}
+
+/* ---------- 11. Portfolio and media added for Part 3 ---------- */
+.search-result-count {
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+.portfolio-teasers {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.portfolio-teaser {
+    position: relative;
+    overflow: hidden;
+    min-height: 24rem;
+    border: 0.07rem solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    text-decoration: none;
+}
+
+.portfolio-teaser img {
+    width: 100%;
+    height: 100%;
+    min-height: 24rem;
+    object-fit: cover;
+    transition: transform 220ms ease, filter 220ms ease;
+}
+
+.portfolio-teaser span {
+    position: absolute;
+    left: 0.8rem;
+    right: 0.8rem;
+    bottom: 0.8rem;
+    padding: 0.65rem 0.8rem;
+    border: 0.06rem solid rgba(255,255,255,0.12);
+    border-radius: 0.35rem;
+    background: rgba(8,8,12,0.82);
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.055em;
+    backdrop-filter: blur(0.35rem);
+}
+
+.portfolio-teaser:hover img,
+.portfolio-teaser:focus-visible img {
+    transform: scale(1.035);
+    filter: saturate(1.08);
+}
+
+.portfolio-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.filter-button {
+    padding: 0.68rem 0.95rem;
+    border: 0.07rem solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible,
+.filter-button.is-active {
+    border-color: var(--purple-light);
+    background: rgba(124,58,237,0.18);
+}
+
+.filter-button:active {
+    transform: translateY(0.08rem);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.portfolio-item {
+    overflow: hidden;
+    border: 0.07rem solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    align-self: start;
+}
+
+/* The supplied advertisement spans the full grid so it never has to share a
+   row with a shorter video card. This removes the stretched empty-card effect. */
+.portfolio-item--advert {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(16rem, 26rem) minmax(0, 1fr);
+    align-items: center;
+}
+
+.portfolio-item > video,
+.portfolio-image-button,
+.portfolio-image-button img,
+.portfolio-image-button picture {
+    display: block;
+    width: 100%;
+}
+
+/* The advert is kept at its natural portrait ratio so none of the supplied
+   artwork or text is cropped from the card. */
+.portfolio-item--advert .portfolio-image-button {
+    background: #050507;
+}
+
+.portfolio-item--advert .portfolio-image-button img {
+    width: 100%;
+    height: auto;
+    max-height: 34rem;
+    object-fit: contain;
+}
+
+/* The two vertical reels form their own matching row. Limiting their display
+   width keeps the cards compact while preserving the complete 9:16 frame. */
+.portfolio-item--video {
+    padding-top: 1rem;
+}
+
+.portfolio-item--video > video {
+    width: min(calc(100% - 2rem), 18rem);
+    height: auto;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    object-fit: contain;
+    background: #050507;
+    border-radius: calc(var(--radius) * 0.7);
+}
+
+/* Keep the two selected photographs uncropped as well. Both source photos use
+   the same portrait proportions, so the cards still line up cleanly. */
+.portfolio-item--photo .portfolio-image-button {
+    background: #050507;
+}
+
+.portfolio-item--photo .portfolio-image-button img {
+    width: 100%;
+    height: auto;
+    max-height: 32rem;
+    object-fit: contain;
+    background: #050507;
+}
+
+.portfolio-image-button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
+}
+
+.portfolio-image-button:focus-visible {
+    outline: 0.2rem solid var(--purple-light);
+    outline-offset: -0.3rem;
+}
+
+.portfolio-copy {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+.portfolio-item--advert .portfolio-copy {
+    padding: 1.35rem 1.5rem;
+    align-self: center;
+}
+
+.portfolio-copy h3 {
+    margin-top: 0.25rem;
+    font-size: 1.2rem;
+}
+
+.portfolio-copy p:last-child {
+    margin-top: 0.55rem;
+    color: var(--muted);
+}
+
+.enquiry-ad-preview {
+    overflow: hidden;
+    border: 0.07rem solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.enquiry-ad-preview img {
+    width: 100%;
+    height: auto;
+}
+
+.enquiry-ad-preview figcaption {
+    padding: 0.8rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+#enquiry-response {
+    border-top: 0.06rem solid var(--line);
+    background: linear-gradient(145deg, rgba(124,58,237,0.10), rgba(13,12,18,0.92));
+}
+
+.response-card {
+    padding: 1rem;
+    border: 0.06rem solid var(--line);
+    border-radius: 0.45rem;
+    background: rgba(9,9,13,0.55);
+}
+
+.response-card strong {
+    color: var(--purple-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.response-card p {
+    margin-top: 0.45rem;
+}
+
+@media (max-width: 62rem) {
+    .portfolio-teasers {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 42rem) {
+    .portfolio-teasers,
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item--advert {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item--advert .portfolio-image-button img {
+        max-height: none;
+    }
+
+    .portfolio-item--video > video {
+        width: min(calc(100% - 2rem), 19rem);
+    }
+
+    .portfolio-teaser,
+    .portfolio-teaser img {
+        min-height: 20rem;
+    }
+
+    .portfolio-filter {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 30rem) {
+    .portfolio-filter {
+        grid-template-columns: 1fr;
+    }
 }
