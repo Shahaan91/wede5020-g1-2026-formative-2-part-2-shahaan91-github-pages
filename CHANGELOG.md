@@ -71,3 +71,11 @@ This standalone changelog records the development of the website across the POE 
 ## Git history note
 
 The Part 2 feedback requested clearer, more descriptive commit history. Commit history cannot be recreated honestly inside a ZIP. The README therefore supplies a feature-specific Part 3 commit sequence that should be made and pushed through Git/GitHub.
+
+## 2026-11-10 – Portfolio media and page hero update
+- Added three supplied automotive photographs to the Portfolio and responsive image set.
+- Added two supplied vertical social videos with local poster frames.
+- Replaced repeated Ferrari imagery on the Home and Services pages with the newer Lamborghini and BMW portfolio work.
+- Reduced Ferrari content in the main Portfolio to one example.
+- Replaced the About-page promotional-video frame with a supplied automotive photograph.
+- Added dark purple image-backed hero areas to About, Services, Portfolio, Enquiry and Contact while preserving readable text contrast.

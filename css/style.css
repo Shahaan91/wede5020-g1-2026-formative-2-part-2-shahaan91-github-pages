@@ -474,11 +474,51 @@ button[type="submit"]:active {
 
 /* ---------- 6. Services page ---------- */
 .page-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     padding-block: clamp(3.2rem, 7vw, 5.6rem);
     border-bottom: 0.06rem solid var(--line);
-    background:
-        linear-gradient(110deg, rgba(124, 58, 237, 0.14), transparent 55%),
-        #0d0c12;
+    background-color: #0d0c12;
+    background-image:
+        linear-gradient(90deg, rgba(24, 10, 45, 0.94) 0%, rgba(31, 14, 52, 0.82) 46%, rgba(8, 8, 13, 0.68) 100%),
+        var(--page-hero-image);
+    background-size: cover;
+    background-position: var(--page-hero-position, center);
+}
+
+.page-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.28));
+    pointer-events: none;
+}
+
+.about-page {
+    --page-hero-image: url("../images/responsive/lamborghini-front-1200w.jpg");
+    --page-hero-position: center 57%;
+}
+
+.services-page {
+    --page-hero-image: url("../images/responsive/lamborghini-rear-1200w.jpg");
+    --page-hero-position: center 58%;
+}
+
+.portfolio-page {
+    --page-hero-image: url("../images/responsive/bmw-portrait-1200w.jpg");
+    --page-hero-position: center 48%;
+}
+
+.enquiry-page {
+    --page-hero-image: url("../images/responsive/lamborghini-front-1200w.jpg");
+    --page-hero-position: center 54%;
+}
+
+.contact-page {
+    --page-hero-image: url("../images/responsive/lamborghini-rear-1200w.jpg");
+    --page-hero-position: center 60%;
 }
 
 .page-hero h1 {
@@ -1090,6 +1130,15 @@ button:disabled {
     min-height: 22rem;
 }
 
+/* About uses a portrait automotive photograph. Keep the full vehicle visible rather than cropping it. */
+.about-page .portfolio-figure img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
+    background: #050507;
+}
+
 .compact-media img {
     aspect-ratio: 4 / 3;
 }
@@ -1309,6 +1358,15 @@ button:disabled {
     max-height: 32rem;
     object-fit: contain;
     background: #050507;
+}
+
+.portfolio-item--photo .portfolio-image-button {
+    display: grid;
+    place-items: center;
+}
+
+.portfolio-item--photo .portfolio-image-button img {
+    max-width: 100%;
 }
 
 .portfolio-image-button {
